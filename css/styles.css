@@ -1,0 +1,133 @@
+:root{
+  --cream: #f6e9e3;
+  --gold:  #d8bf5a;
+  --gray:  #9a9a9a;
+  --slate: #4b4f4b;
+  --black: #121212;
+  --card:  #ffffff;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--black);
+}
+
+/* ===== Page Layout (NO IFRAMES) ===== */
+.site-header{
+  background: var(--slate);
+  padding: 22px 18px;
+}
+
+.header-card{
+  max-width: 1100px;
+  margin: 0 auto;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid var(--gold);
+  border-radius: 16px;
+  padding: 18px 20px;
+  text-align: center; /* centers "My Portfolio" */
+}
+
+.header-card h1{
+  margin: 0;
+  color: white;
+  font-size: 36px;
+}
+
+.header-card p{
+  margin: 6px 0 0;
+  color: var(--gold);
+  font-weight: bold;
+}
+
+.layout{
+  max-width: 1100px;
+  margin: 18px auto;
+  padding: 0 18px;
+
+  display: grid;
+  grid-template-columns: 260px 1fr; /* nav + content */
+  gap: 18px;
+}
+
+nav{
+  background: var(--cream);
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 16px;
+  padding: 16px;
+  height: fit-content;
+}
+
+nav h3{
+  margin: 0 0 12px;
+  color: var(--slate);
+}
+
+nav a{
+  display: block;
+  text-decoration: none;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 14px;
+  background: white;
+  border-left: 8px solid var(--gold);
+  color: var(--black);
+  font-weight: bold;
+}
+
+nav a:hover{
+  background: rgba(216,191,90,0.2);
+}
+
+/* main content */
+main{
+  padding: 0;
+}
+
+.page-title{
+  margin: 0 0 12px;
+  color: var(--slate);
+  font-size: 38px;
+}
+
+.card{
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.15);
+}
+
+/* tables */
+table{ width: 100%; border-collapse: collapse; }
+th, td{ border: 1px solid rgba(0,0,0,0.2); padding: 10px; }
+th{ background: rgba(216,191,90,0.3); }
+
+/* form */
+input, select, textarea{
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+
+button{
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button[type="submit"]{ background: var(--slate); color: white; }
+button[type="reset"]{ background: var(--gray); color: white; }
+
+.site-footer{
+  text-align: center;
+  padding: 18px;
+  color: rgba(0,0,0,0.65);
+}
