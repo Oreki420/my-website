@@ -7,19 +7,18 @@
 
   <!-- Portfolio CSS -->
   <link rel="stylesheet" href="css/styles.css" />
-
-  <!-- Scoped Resume CSS -->
+  <!-- Resume CSS -->
   <link rel="stylesheet" href="css/resume.css" />
 
-  <!-- Font Awesome (resume icons) -->
+  <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/b99e675b6e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
 <header class="site-header">
   <div class="header-card">
     <h1>Earl's Portfolio</h1>
+    <button class="theme-toggle" type="button" aria-label="Toggle theme">🌙</button>
   </div>
 </header>
 
@@ -38,18 +37,13 @@
   <main>
     <h1 class="page-title">Resume</h1>
 
-    <!-- Everything resume-related lives inside this scope -->
-    <section class="resume-scope">
-
+    <section class="resume-scope" id="resumeScope">
       <div class="resume">
+
+        <!-- LEFT -->
         <div class="resume_left">
           <div class="resume_profile">
-            <!-- original fallback placeholder -->
-            <img
-              src="img/avatar.jpg"
-              alt="Profile photo"
-              onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;800&quot; viewBox=&quot;0 0 800 800&quot;><defs><linearGradient id=&quot;g&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;1&quot; y2=&quot;1&quot;><stop offset=&quot;0&quot; stop-color=&quot;%239DC9CC&quot; stop-opacity=&quot;0.35&quot;/><stop offset=&quot;1&quot; stop-color=&quot;%23805A8A&quot; stop-opacity=&quot;0.25&quot;/></linearGradient></defs><rect width=&quot;800&quot; height=&quot;800&quot; fill=&quot;url(%23g)&quot;/><circle cx=&quot;400&quot; cy=&quot;320&quot; r=&quot;120&quot; fill=&quot;%232D2F66&quot; fill-opacity=&quot;0.25&quot;/><path d=&quot;M160 720c36-132 154-228 240-228s204 96 240 228&quot; fill=&quot;%232D2F66&quot; fill-opacity=&quot;0.18&quot;/><text x=&quot;400&quot; y=&quot;120&quot; text-anchor=&quot;middle&quot; font-family=&quot;Montserrat, Arial&quot; font-size=&quot;34&quot; fill=&quot;%232D2F66&quot; fill-opacity=&quot;0.65&quot;>Profile Photo</text></svg>'"
-            />
+            <img src="img/profile.jpg" alt="Profile photo" />
           </div>
 
           <div class="resume_content">
@@ -59,216 +53,224 @@
                 <p class="regular">Computer Engineering Undergraduate</p>
               </div>
 
-              <!-- Updated: shortened address + dummy phone/email + removed portfolio link row -->
               <ul>
                 <li>
                   <div class="icon"><i class="fas fa-map-signs"></i></div>
-                  <div class="data">Quezon City</div>
+                  <div class="data">Lahai-Roi City</div>
                 </li>
                 <li>
                   <div class="icon"><i class="fas fa-mobile-alt"></i></div>
-                  <div class="data">0917 000 0000</div>
+                  <div class="data">0471 011 1111</div>
                 </li>
                 <li>
                   <div class="icon"><i class="fas fa-envelope"></i></div>
-                  <div class="data">earl.student@example.com</div>
+                  <div class="data">mf_luder@xfiles.com</div>
                 </li>
               </ul>
             </div>
 
+            <!-- SKILLS -->
             <div class="resume_item resume_skills">
               <div class="title">
                 <p class="bold">SKILLS</p>
               </div>
 
               <ul>
-                <!-- Updated: Languages now shows % on right -->
                 <li>
                   <div class="skill_name">Languages</div>
-                  <div class="skill_progress"><span style="width: 90%;"></span></div>
+                  <div class="skill_progress"><span style="--level: 90%;"></span></div>
                   <div class="skill_per">90%</div>
                 </li>
                 <li>
                   <div class="skill_name">MS Office</div>
-                  <div class="skill_progress"><span style="width: 85%;"></span></div>
+                  <div class="skill_progress"><span style="--level: 85%;"></span></div>
                   <div class="skill_per">85%</div>
                 </li>
                 <li>
                   <div class="skill_name">Google Suite</div>
-                  <div class="skill_progress"><span style="width: 85%;"></span></div>
+                  <div class="skill_progress"><span style="--level: 85%;"></span></div>
                   <div class="skill_per">85%</div>
                 </li>
                 <li>
                   <div class="skill_name">Video Editing</div>
-                  <div class="skill_progress"><span style="width: 75%;"></span></div>
+                  <div class="skill_progress"><span style="--level: 75%;"></span></div>
                   <div class="skill_per">75%</div>
                 </li>
                 <li>
                   <div class="skill_name">Robotics</div>
-                  <div class="skill_progress"><span style="width: 70%;"></span></div>
+                  <div class="skill_progress"><span style="--level: 70%;"></span></div>
                   <div class="skill_per">70%</div>
                 </li>
               </ul>
 
-              <div class="mini_note">
-                <p>Fluent in English, Chinese, Bisaya, and Filipino.</p>
-                <p>Tools: Word, Excel, PowerPoint, Docs, Sheets, Slides, Filmora, Adobe After Effects, Abilix Krypton, LEGO Mindstorms.</p>
-                <p>Strengths: adaptable, collaborative, and comfortable leading teams.</p>
+              <!-- NEW: heading + original bullets -->
+              <div class="skill_bullets">
+                <p class="mini_heading">Skills Summary</p>
+                <ul>
+                  <li>Fluent in English, Chinese, Bisaya, and Filipino</li>
+                  <li>Proficient with Microsoft Word, Microsoft Excel, Microsoft Powerpoint, Google Docs, Google Sheets, Google Slides, Filmora, Adobe After Effects, Abilix Krypton, and Lego Mindstorms</li>
+                  <li>Adaptable to any situations</li>
+                  <li>Works well with a variety of team members and has a great leadership ability</li>
+                </ul>
               </div>
             </div>
 
+            <!-- SOCIAL -->
             <div class="resume_item resume_social">
               <div class="title">
                 <p class="bold">SOCIAL</p>
               </div>
               <ul>
-                <!-- Updated: dummy public-safe links -->
                 <li>
                   <div class="icon"><i class="fab fa-facebook-square"></i></div>
                   <div class="data">
                     <p class="semi-bold">Facebook</p>
-                    <p>https://facebook.com/your.profile</p>
+                    <p>https://facebook.com/foxmulder</p>
                   </div>
                 </li>
                 <li>
                   <div class="icon"><i class="fab fa-twitter-square"></i></div>
                   <div class="data">
                     <p class="semi-bold">Twitter / X</p>
-                    <p>https://x.com/yourhandle</p>
+                    <p>https://x.com/mf_luder</p>
                   </div>
                 </li>
                 <li>
                   <div class="icon"><i class="fab fa-linkedin"></i></div>
                   <div class="data">
                     <p class="semi-bold">LinkedIn</p>
-                    <p>https://linkedin.com/in/yourhandle</p>
+                    <p>https://linkedin.com/in/foxmulder</p>
                   </div>
                 </li>
               </ul>
             </div>
+
           </div>
         </div>
 
+        <!-- RIGHT -->
         <div class="resume_right">
+
           <div class="resume_item resume_about">
-            <div class="title">
-              <p class="bold">ABOUT ME</p>
-            </div>
+            <div class="title"><p class="bold">ABOUT ME</p></div>
             <p>
-              I aim to use my expertise to benefit society and the company, continuously develop my skills,
-              and apply my abilities, interests, and sense of duty in service to others.
+              I aim to use my expertise to benefit society and the company,
+              continuously develop my skills, and apply my abilities, interests,
+              and sense of duty in service to others.
             </p>
           </div>
 
+          <!-- AWARDS -->
           <div class="resume_item resume_work">
-            <div class="title">
-              <p class="bold">AWARDS & ACHIEVEMENTS</p>
-            </div>
+            <div class="title"><p class="bold">AWARDS & ACHIEVEMENTS</p></div>
             <ul>
               <li>
                 <div class="date">S.Y. 2023 - 2026</div>
                 <div class="info">
                   <p class="semi-bold">Excellence in Academic (3rd Section Honor)</p>
-                  <p>Philippine Cultural College – Caloocan Campus</p>
+                  <p>Philippine Cultural College - Caloocan Campus</p>
                 </div>
               </li>
               <li>
                 <div class="date">S.Y. 2023 - 2026</div>
                 <div class="info">
                   <p class="semi-bold">Excellence in Conduct (2nd Place)</p>
-                  <p>Philippine Cultural College – Caloocan Campus</p>
+                  <p>Philippine Cultural College - Caloocan Campus</p>
                 </div>
               </li>
               <li>
                 <div class="date">S.Y. 2023 - 2026</div>
                 <div class="info">
                   <p class="semi-bold">Poetry Writing Contest Champion</p>
-                  <p>Philippine Cultural College – Caloocan Campus</p>
+                  <p>Philippine Cultural College - Caloocan Campus</p>
                 </div>
               </li>
               <li>
                 <div class="date">S.Y. 2023 - 2026</div>
                 <div class="info">
                   <p class="semi-bold">Vocabulary Wizard Challenge (3rd Place)</p>
-                  <p>Philippine Cultural College – Caloocan Campus</p>
+                  <p>Philippine Cultural College - Caloocan Campus</p>
                 </div>
               </li>
               <li>
                 <div class="date">S.Y. 2017 - 2018</div>
                 <div class="info">
                   <p class="semi-bold">Pagsasaling Wika</p>
-                  <p>Philippine Cultural College – Caloocan Campus</p>
+                  <p>Philippine Cultural College - Caloocan Campus</p>
                 </div>
               </li>
               <li>
                 <div class="date">S.Y. 2016 - 2017</div>
                 <div class="info">
                   <p class="semi-bold">Excellence in Academic (3rd Section Honor)</p>
-                  <p>Philippine Cultural College – Caloocan Campus</p>
+                  <p>Philippine Cultural College - Caloocan Campus</p>
                 </div>
               </li>
               <li>
                 <div class="date">S.Y. 2015 - 2016</div>
                 <div class="info">
                   <p class="semi-bold">Internet and Web Page Design</p>
-                  <p>Philippine Cultural College – Caloocan Campus</p>
+                  <p>Philippine Cultural College - Caloocan Campus</p>
                 </div>
               </li>
             </ul>
           </div>
 
+          <!-- EDUCATION -->
           <div class="resume_item resume_education">
-            <div class="title">
-              <p class="bold">EDUCATION</p>
-            </div>
+            <div class="title"><p class="bold">EDUCATIONAL BACKGROUND</p></div>
             <ul>
               <li>
-                <div class="date">S.Y. 2022 - Present</div>
+                <div class="date">S.Y. 2022 - PRESENT</div>
                 <div class="info">
-                  <p class="semi-bold">De La Salle University</p>
-                  <p>Bachelor of Science in Computer Engineering (Undergraduate)</p>
+                  <p class="semi-bold">College Undergraduate</p>
+                  <p>De La Salle University</p>
+                  <p>Bachelor of Science in Computer Engineering</p>
                   <p>2401 Taft Ave, Malate, Manila, 1004 Metro Manila</p>
                 </div>
               </li>
+
               <li>
                 <div class="date">S.Y. 2020 - 2022</div>
                 <div class="info">
-                  <p class="semi-bold">Philippine Cultural College – Caloocan Campus</p>
-                  <p>Senior High School (STEM Strand)</p>
+                  <p class="semi-bold">Senior High School Graduate</p>
+                  <p>Science, Technology, Engineering and Mathematics (STEM) Strand</p>
+                  <p>Philippine Cultural College – Caloocan Campus</p>
                   <p>175 8th Ave. Ext., East Grace Park, Caloocan City</p>
                 </div>
               </li>
+
               <li>
                 <div class="date">S.Y. 2016 - 2020</div>
                 <div class="info">
-                  <p class="semi-bold">Philippine Cultural College – Caloocan Campus</p>
-                  <p>Junior High School</p>
+                  <p class="semi-bold">Junior High School Graduate</p>
+                  <p>Philippine Cultural College – Caloocan Campus</p>
                   <p>175 8th Ave. Ext., East Grace Park, Caloocan City</p>
                 </div>
               </li>
+
               <li>
                 <div class="date">S.Y. 2012 - 2016</div>
                 <div class="info">
-                  <p class="semi-bold">Philippine Cultural College – Caloocan Campus</p>
-                  <p>Elementary</p>
+                  <p class="semi-bold">Elementary Graduate</p>
+                  <p>Philippine Cultural College – Caloocan Campus</p>
                   <p>175 8th Ave. Ext., East Grace Park, Caloocan City</p>
                 </div>
               </li>
             </ul>
           </div>
 
+          <!-- LEADERSHIP + ORGS -->
           <div class="resume_item resume_hobby">
-            <div class="title">
-              <p class="bold">LEADERSHIP & ORGANIZATIONS</p>
-            </div>
+            <div class="title"><p class="bold">LEADERSHIP & ORGANIZATIONS</p></div>
 
             <div class="hobby_grid">
               <div class="hobby_card">
                 <div class="hobby_icon"><i class="fas fa-user-check"></i></div>
                 <div class="hobby_text">
-                  <p class="semi-bold">Leadership Roles</p>
-                  <p>Secretary, English Class (S.Y. 2016 - 2017)</p>
-                  <p>President, English Class (S.Y. 2017 - 2020)</p>
+                  <p class="semi-bold">Leadership Role</p>
+                  <p>Secretary of the English Class (S.Y. 2016 – 2017)</p>
+                  <p>President of the English Class (S.Y. 2017 – 2020)</p>
                   <p>Batch Captain (S.Y. 2018 - 2019)</p>
                 </div>
               </div>
@@ -276,19 +278,9 @@
               <div class="hobby_card">
                 <div class="hobby_icon"><i class="fas fa-users"></i></div>
                 <div class="hobby_text">
-                  <p class="semi-bold">Clubs / Teams</p>
-                  <p>Robotics Club (S.Y. 2018 - 2020)</p>
-                  <p>Table Tennis Club (S.Y. 2023 - 2026)</p>
-                </div>
-              </div>
-
-              <div class="hobby_card">
-                <div class="hobby_icon"><i class="fas fa-address-book"></i></div>
-                <div class="hobby_text">
-                  <p class="semi-bold">References</p>
-                  <p>Mr. Mark Israel, LPT (SHS Teacher)</p>
-                  <p>Mr. Eddie Ching, LPT (SHS Teacher)</p>
-                  <p>Mr. Agnes De Guzman, LPT (SHS Teacher)</p>
+                  <p class="semi-bold">Organizations / Teams / Clubs</p>
+                  <p>S.Y. 2018 – 2020: Robotics Club (Philippine Cultural College – Caloocan Campus)</p>
+                  <p>S.Y. 2023 – 2026: Table Tennis Club (Philippine Cultural College – Caloocan Campus)</p>
                 </div>
               </div>
             </div>
@@ -296,10 +288,57 @@
 
         </div>
       </div>
-
     </section>
   </main>
 </div>
+
+<!-- Theme toggle -->
+<script>
+  (function () {
+    const root = document.documentElement;
+    const btn = document.querySelector(".theme-toggle");
+
+    const saved = localStorage.getItem("theme");
+    if (saved) root.setAttribute("data-theme", saved);
+    else if (window.matchMedia("(prefers-color-scheme: dark)").matches) root.setAttribute("data-theme", "dark");
+
+    function setIcon() {
+      const isDark = root.getAttribute("data-theme") === "dark";
+      btn.textContent = isDark ? "☀️" : "🌙";
+    }
+    if (btn) setIcon();
+
+    btn?.addEventListener("click", () => {
+      const isDark = root.getAttribute("data-theme") === "dark";
+      const next = isDark ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+      setIcon();
+    });
+  })();
+</script>
+
+<!-- Animate skill bars on scroll -->
+<script>
+  (function () {
+    const scope = document.getElementById("resumeScope");
+    if (!scope) return;
+
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) { scope.classList.add("is-visible"); return; }
+
+    const obs = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          scope.classList.add("is-visible");
+          obs.disconnect();
+        }
+      }
+    }, { threshold: 0.35 });
+
+    obs.observe(scope);
+  })();
+</script>
 
 </body>
 </html>

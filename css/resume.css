@@ -1,20 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap");
 
-:root {
-  /* Color palette (Night Calm) */
+:root{
   --cream: #EBD3B5;
-  --sand: #CDA298;
   --mauve: #805A8A;
-  --navy: #2D2F66;
+  --navy:  #2D2F66;
   --seafoam: #9DC9CC;
-
-  --ink: #2A2A2A;
-  --muted: #555555;
   --paper: #FFFFFF;
+  --muted: #555555;
 }
 
-/* reset only inside resume */
-.resume-scope * {
+.resume-scope *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -22,220 +17,195 @@
   font-family: "Montserrat", sans-serif;
 }
 
-/* instead of body */
-.resume-scope {
+.resume-scope{
   background: var(--cream);
   font-size: 14px;
   line-height: 22px;
   color: var(--muted);
-
   padding: 14px;
   border-radius: 16px;
   overflow-x: auto;
 }
 
-.resume-scope .bold {
+.resume-scope .bold{
   font-weight: 700;
   font-size: 20px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
 }
+.resume-scope .semi-bold{ font-weight: 600; font-size: 16px; }
 
-.resume-scope .semi-bold {
-  font-weight: 600;
-  font-size: 16px;
-}
-
-.resume-scope .resume {
+.resume-scope .resume{
   width: 100%;
   max-width: 900px;
-  height: auto;
   display: flex;
   margin: 18px auto;
-  box-shadow: 0 10px 30px rgba(45, 47, 102, 0.18);
+  box-shadow: 0 10px 30px rgba(45,47,102,.18);
   border-radius: 10px;
   overflow: hidden;
 }
 
 /* LEFT */
-.resume-scope .resume .resume_left {
+.resume-scope .resume_left{
   width: 280px;
   background: var(--navy);
 }
 
-.resume-scope .resume .resume_left .resume_profile {
+.resume-scope .resume_profile{
   width: 100%;
   height: 280px;
-  background: rgba(157, 201, 204, 0.12);
+  background: rgba(157,201,204,.12);
 }
-
-.resume-scope .resume .resume_left .resume_profile img {
+.resume-scope .resume_profile img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.resume-scope .resume .resume_left .resume_content {
-  padding: 0 25px;
-}
+.resume-scope .resume_content{ padding: 0 25px; }
+.resume-scope .title{ margin-bottom: 20px; }
 
-.resume-scope .resume .title {
-  margin-bottom: 20px;
-}
+.resume-scope .resume_left .bold{ color: var(--paper); }
+.resume-scope .resume_left .regular{ color: rgba(157,201,204,.95); }
 
-.resume-scope .resume .resume_left .bold {
-  color: var(--paper);
-}
-
-.resume-scope .resume .resume_left .regular {
-  color: rgba(157, 201, 204, 0.95);
-}
-
-.resume-scope .resume .resume_item {
+.resume-scope .resume_item{
   padding: 25px 0;
-  border-bottom: 2px solid rgba(157, 201, 204, 0.35);
+  border-bottom: 2px solid rgba(157,201,204,.35);
 }
+.resume-scope .resume_left .resume_item:last-child,
+.resume-scope .resume_right .resume_item:last-child{ border-bottom: 0; }
 
-.resume-scope .resume .resume_left .resume_item:last-child,
-.resume-scope .resume .resume_right .resume_item:last-child {
-  border-bottom: 0px;
-}
-
-/* left list items alignment */
-.resume-scope .resume .resume_left ul li {
+/* left lists: CENTER ICON + TEXT (fix) */
+.resume-scope .resume_left ul li{
   display: grid;
-  grid-template-columns: 35px 1fr;
-  column-gap: 15px;
-  align-items: start;
-  margin-bottom: 12px;
-}
-
-.resume-scope .resume .resume_left ul li:last-child {
-  margin-bottom: 0;
-}
-
-.resume-scope .resume .resume_left ul li .icon {
-  width: 35px;
-  height: 35px;
-  background: var(--seafoam);
-  color: var(--navy);
-  border-radius: 50%;
-  margin-right: 0;
-  font-size: 16px;
-  position: relative;
-  margin-top: 2px;
-}
-
-.resume-scope .resume .icon i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.resume-scope .resume .resume_left ul li .data {
-  color: rgba(235, 211, 181, 0.9);
-  line-height: 20px;
-  padding-top: 1px;
-}
-
-/* Social list uses the same alignment */
-.resume-scope .resume .resume_left .resume_social ul li {
-  grid-template-columns: 35px 1fr;
+  grid-template-columns: 44px 1fr;   /* slightly wider icon column */
+  column-gap: 14px;
+  align-items: center;              /* key: vertical centering */
   margin-bottom: 14px;
 }
 
-.resume-scope .resume .resume_left .resume_social ul li .data p {
-  margin: 0;
-}
-
-/* SKILLS alignment */
-.resume-scope .resume .resume_left .resume_skills ul li {
-  display: flex;
-  margin-bottom: 10px;
-  color: rgba(235, 211, 181, 0.9);
-  justify-content: space-between;
-  align-items: center;
-}
-
-.resume-scope .resume .resume_left .resume_skills ul li .skill_name {
-  width: 34%;
-  font-size: 12px;
-  letter-spacing: 0.2px;
-}
-
-.resume-scope .resume .resume_left .resume_skills ul li .skill_progress {
-  width: 52%;
-  margin: 0 8px;
-  height: 6px;
-  background: rgba(157, 201, 204, 0.25);
-  position: relative;
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.resume-scope .resume .resume_left .resume_skills ul li .skill_per {
-  width: 14%;
-  text-align: right;
-  font-size: 12px;
-}
-
-.resume-scope .resume .resume_left .resume_skills ul li .skill_progress span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
+/* circle icon */
+.resume-scope .resume_left ul li .icon{
+  width: 44px;
+  height: 44px;
   background: var(--seafoam);
+  color: var(--navy);
+  border-radius: 50%;
+  font-size: 16px;
+  display: grid;                    /* simple centering */
+  place-items: center;
 }
 
-.resume-scope .resume .resume_left .resume_social .semi-bold {
-  color: var(--paper);
-  margin-bottom: 3px;
+/* remove absolute positioning so alignment stays clean */
+.resume-scope .icon i{
+  position: static;
+  transform: none;
+}
+
+/* text block */
+.resume-scope .resume_left ul li .data{
+  color: rgba(235,211,181,.92);
+  line-height: 18px;
+  word-break: break-word;
+  padding-top: 0;
+}
+
+/* ===== SKILLS (forced, aligned) ===== */
+.resume-scope .resume_skills ul{
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+.resume-scope .resume_skills ul li{
+  display: grid !important;
+  grid-template-columns: 120px 1fr 52px !important;
+  align-items: center !important;
+  column-gap: 12px !important;
+  width: 100% !important;
+}
+.resume-scope .resume_skills ul li .skill_name{
+  grid-column: 1 !important;
+  font-size: 12px !important;
+  line-height: 1.2 !important;
+  color: rgba(235,211,181,.92) !important;
+}
+.resume-scope .resume_skills ul li .skill_progress{
+  grid-column: 2 !important;
+  width: 100% !important;
+  height: 8px !important;
+  background: rgba(157,201,204,.25) !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+}
+.resume-scope .resume_skills ul li .skill_progress span{
+  display: block !important;
+  height: 100% !important;
+  width: 0% !important;
+  background: var(--seafoam) !important;
+  border-radius: 999px !important;
+  transition: width 900ms cubic-bezier(.16,1,.3,1) !important;
+}
+.resume-scope.is-visible .resume_skills ul li .skill_progress span{
+  width: var(--level) !important;
+}
+.resume-scope .resume_skills ul li .skill_per{
+  grid-column: 3 !important;
+  text-align: right !important;
+  font-size: 12px !important;
+  color: rgba(235,211,181,.92) !important;
+  white-space: nowrap !important;
+}
+
+/* Skills Summary block */
+.resume-scope .skill_bullets{
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(157,201,204,.35);
+}
+
+/* NEW: mini heading */
+.resume-scope .mini_heading{
+  color: rgba(157,201,204,.95);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.resume-scope .skill_bullets ul{
+  list-style: disc;
+  padding-left: 16px;
+}
+.resume-scope .skill_bullets li{
+  list-style: disc;
+  color: rgba(235,211,181,.92);
+  font-size: 12px;
+  line-height: 18px;
+  margin: 8px 0;
 }
 
 /* RIGHT */
-.resume-scope .resume .resume_right {
+.resume-scope .resume_right{
   width: 520px;
   background: var(--paper);
   padding: 25px;
 }
+.resume-scope .resume_right .bold{ color: var(--navy); }
+.resume-scope .resume_right p{ color: var(--muted); }
 
-.resume-scope .resume .resume_right .bold {
-  color: var(--navy);
-}
-
-.resume-scope .resume .resume_right .resume_about p {
-  color: var(--muted);
-}
-
-.resume-scope .resume .resume_right .resume_work ul,
-.resume-scope .resume .resume_right .resume_education ul {
+/* timeline lists */
+.resume-scope .resume_right .resume_work ul,
+.resume-scope .resume_right .resume_education ul{
   padding-left: 40px;
-  overflow: hidden;
 }
-
-.resume-scope .resume .resume_right ul li {
+.resume-scope .resume_right ul li{
   position: relative;
+  padding-bottom: 18px;
 }
-
-.resume-scope .resume .resume_right ul li .date {
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: var(--mauve);
-}
-
-.resume-scope .resume .resume_right ul li .info {
-  margin-bottom: 18px;
-}
-
-.resume-scope .resume .resume_right ul li:last-child .info {
-  margin-bottom: 0;
-}
-
-.resume-scope .resume .resume_right .resume_work ul li:before,
-.resume-scope .resume .resume_right .resume_education ul li:before {
+.resume-scope .resume_right .resume_work ul li:before,
+.resume-scope .resume_right .resume_education ul li:before{
   content: "";
   position: absolute;
   top: 6px;
@@ -246,67 +216,96 @@
   border: 2px solid var(--mauve);
   background: var(--paper);
 }
-
-.resume-scope .resume .resume_right .resume_work ul li:after,
-.resume-scope .resume .resume_right .resume_education ul li:after {
+.resume-scope .resume_right .resume_work ul li:after,
+.resume-scope .resume_right .resume_education ul li:after{
   content: "";
   position: absolute;
   top: 16px;
   left: -21px;
   width: 2px;
-  height: 115px;
-  background: rgba(128, 90, 138, 0.55);
+  bottom: 0;
+  background: rgba(128,90,138,.55);
+}
+.resume-scope .resume_right .resume_work ul li:last-child:after,
+.resume-scope .resume_right .resume_education ul li:last-child:after{
+  display: none;
+}
+.resume-scope .resume_right ul li .date{
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--mauve);
 }
 
-/* Cards at the bottom */
-.resume-scope .hobby_grid {
+/* bottom cards */
+.resume-scope .hobby_grid{
   display: grid;
   grid-template-columns: 1fr;
   gap: 12px;
 }
-
-.resume-scope .hobby_card {
-  border: 2px solid rgba(157, 201, 204, 0.55);
+.resume-scope .hobby_card{
+  border: 2px solid rgba(157,201,204,.55);
   border-radius: 14px;
-  padding: 12px 12px;
+  padding: 12px;
   display: grid;
   grid-template-columns: 44px 1fr;
   gap: 12px;
-  align-items: start;
-  background: rgba(235, 211, 181, 0.18);
+  background: rgba(235,211,181,.18);
 }
-
-.resume-scope .hobby_icon {
+.resume-scope .hobby_icon{
   width: 44px;
   height: 44px;
   border-radius: 50%;
   border: 2px solid var(--mauve);
   color: var(--navy);
   position: relative;
-  background: rgba(157, 201, 204, 0.25);
+  background: rgba(157,201,204,.25);
+  display: grid;
+  place-items: center;
 }
-
-.resume-scope .hobby_icon i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.resume-scope .hobby_icon i{
+  position: static;
+  transform: none;
   font-size: 18px;
 }
 
-.resume-scope .hobby_text p {
-  margin: 2px 0;
+/* ===== Dark mode tuning ===== */
+[data-theme="dark"] .resume-scope{ background: transparent; }
+
+[data-theme="dark"] .resume-scope .resume{
+  background: #161a34;
+  box-shadow: 0 14px 34px rgba(0,0,0,.45);
+}
+[data-theme="dark"] .resume-scope .resume_right{ background: #161a34; }
+[data-theme="dark"] .resume-scope .resume_left{ background: #0b0e1f; }
+
+[data-theme="dark"] .resume-scope .resume_right .bold{ color: #f3f4ff; }
+[data-theme="dark"] .resume-scope .resume_right,
+[data-theme="dark"] .resume-scope .resume_right p{
+  color: rgba(243,244,255,.85);
 }
 
-/* long text safety */
-.resume-scope .resume .data {
-  word-break: break-word;
+[data-theme="dark"] .resume-scope .resume_item{
+  border-bottom: 2px solid rgba(157,201,204,.18);
 }
 
-/* ✅ Readability fix for the mini-note text */
-.resume-scope .resume .resume_left .mini_note p {
-  color: rgba(235, 211, 181, 0.92);
-  font-size: 12px;
-  line-height: 18px;
-  margin: 8px 0;
+[data-theme="dark"] .resume-scope .resume_right ul li .date{
+  color: rgba(157,201,204,.95);
+}
+
+[data-theme="dark"] .resume-scope .resume_right .resume_work ul li:before,
+[data-theme="dark"] .resume-scope .resume_right .resume_education ul li:before{
+  border-color: rgba(157,201,204,.75);
+  background: #161a34;
+}
+[data-theme="dark"] .resume-scope .resume_right .resume_work ul li:after,
+[data-theme="dark"] .resume-scope .resume_right .resume_education ul li:after{
+  background: rgba(157,201,204,.28);
+}
+
+[data-theme="dark"] .resume-scope .resume_skills ul li .skill_progress{
+  background: rgba(255,255,255,.14) !important;
+}
+[data-theme="dark"] .resume-scope .resume_skills ul li .skill_progress span{
+  background: rgba(157,201,204,.95) !important;
 }

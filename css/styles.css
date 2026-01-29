@@ -1,16 +1,50 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap");
 
 :root{
-  /* Unified Color Scheme (matches Resume) */
+  /* Base palette (matches Resume) */
   --cream: #EBD3B5;
   --sand:  #CDA298;
   --mauve: #805A8A;
   --navy:  #2D2F66;
   --seafoam:#9DC9CC;
 
-  --paper: #ffffff;
-  --ink:   #2A2A2A;
+  /* Theme tokens (LIGHT defaults) */
+  --bg:    var(--cream);
+  --panel: var(--sand);
+  --card:  #ffffff;
+
+  --text:  #2A2A2A;
   --muted: #555555;
+
+  --header-bg: var(--navy);
+  --header-border: var(--seafoam);
+
+  --nav-link-bg: #ffffff;
+  --nav-link-text: var(--navy);
+  --nav-accent: var(--seafoam);
+
+  --shadow: rgba(45,47,102,0.10);
+  --shadow-strong: rgba(45,47,102,0.18);
+}
+
+/* DARK theme overrides */
+[data-theme="dark"]{
+  --bg:    #0f1226;                 /* deep navy-black */
+  --panel: rgba(205,162,152,0.12);  /* sand-tinted panel */
+  --card:  #161a34;
+
+  --text:  #f3f4ff;
+  --muted: rgba(243,244,255,0.75);
+
+  --header-bg: #0b0e1f;
+  --header-border: var(--mauve);
+
+  --nav-link-bg: rgba(255,255,255,0.06);
+  --nav-link-text: #f3f4ff;
+  --nav-accent: var(--seafoam);
+
+  --shadow: rgba(0,0,0,0.25);
+  --shadow-strong: rgba(0,0,0,0.40);
 }
 
 *{ box-sizing: border-box; }
@@ -18,13 +52,13 @@
 body{
   margin: 0;
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  background: var(--cream);
-  color: var(--ink);
+  background: var(--bg);
+  color: var(--text);
 }
 
 /* ===== Header ===== */
 .site-header{
-  background: var(--navy);
+  background: var(--header-bg);
   padding: 22px 18px;
 }
 
@@ -32,39 +66,75 @@ body{
   max-width: 1100px;
   margin: 0 auto;
   background: rgba(255,255,255,0.06);
-  border: 2px solid var(--seafoam);
+  border: 2px solid var(--header-border);
   border-radius: 16px;
   padding: 18px 20px;
   text-align: center;
+  position: relative; /* for the theme button positioning */
 }
 
 .header-card h1{
   margin: 0;
-  color: var(--paper);
+  color: var(--text);
   font-size: 36px;
   letter-spacing: 1px;
+  
 }
 
-.header-card p{
-  margin: 6px 0 0;
-  color: var(--seafoam);
-  font-weight: 600;
+[data-theme="dark"] .header-card h1{
+  color: var(--text);
 }
 
-/* ===== Page Layout (NO IFRAMES) ===== */
+/* Theme toggle button */
+.theme-toggle{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  border: 2px solid var(--header-border);
+  background: rgba(0,0,0,0.18); /* visible on light & dark headers */
+  color: #ffffff;
+
+  border-radius: 14px;
+  padding: 10px 12px;
+  cursor: pointer;
+
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1;
+
+  box-shadow: 0 10px 22px var(--shadow-strong);
+  transition: transform 120ms ease, filter 120ms ease, background 120ms ease;
+}
+
+.theme-toggle:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.theme-toggle:active{
+  transform: translateY(0px);
+}
+
+.theme-toggle:focus{
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(157,201,204,0.25), 0 10px 22px var(--shadow-strong);
+}
+
+
+/* ===== Page Layout ===== */
 .layout{
   max-width: 1100px;
   margin: 18px auto;
   padding: 0 18px;
-
   display: grid;
-  grid-template-columns: 260px 1fr; /* nav + content */
+  grid-template-columns: 260px 1fr;
   gap: 18px;
 }
 
 /* ===== Navigation ===== */
 nav{
-  background: var(--sand);
+  background: var(--panel);
   border: 1px solid rgba(45,47,102,0.15);
   border-radius: 16px;
   padding: 16px;
@@ -73,7 +143,7 @@ nav{
 
 nav h3{
   margin: 0 0 12px;
-  color: var(--navy);
+  color: var(--text);
   font-weight: 700;
 }
 
@@ -84,70 +154,106 @@ nav a{
   margin: 10px 0;
   border-radius: 14px;
 
-  background: var(--paper);
-  border-left: 8px solid var(--seafoam);
+  background: var(--nav-link-bg);
+  border-left: 8px solid var(--nav-accent);
 
-  color: var(--navy);
+  color: var(--nav-link-text);
   font-weight: 700;
 
   transition: background 0.15s ease, transform 0.15s ease;
 }
 
 nav a:hover{
-  background: rgba(157,201,204,0.35);
+  background: rgba(157,201,204,0.25);
   transform: translateY(-1px);
 }
 
-/* ===== Active Navigation Link ===== */
+/* Active nav link */
 nav a.active{
   background: var(--navy);
-  color: var(--paper);
+  color: #ffffff;
   border-left-color: var(--mauve);
   box-shadow: 0 6px 18px rgba(45,47,102,0.25);
 }
-
 nav a.active:hover{
   background: var(--navy);
   transform: none;
 }
 
-
-
-
 /* ===== Main content ===== */
 main{
   padding: 0;
+
+  /* Subtle page transition (fade in) */
+  animation: pageFadeIn 220ms ease-out;
+}
+
+@keyframes pageFadeIn{
+  from{ opacity: 0; transform: translateY(6px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  main{ animation: none; }
 }
 
 .page-title{
   margin: 0 0 12px;
-  color: var(--navy);
+  color: var(--text);
   font-size: 38px;
   letter-spacing: 0.5px;
 }
 
 /* Cards */
 .card{
-  background: var(--paper);
+  background: var(--card);
   padding: 20px;
   border-radius: 16px;
   border: 1px solid rgba(45,47,102,0.15);
-  box-shadow: 0 10px 30px rgba(45,47,102,0.10);
+  box-shadow: 0 10px 30px var(--shadow);
+  color: var(--text);
+
+  /* Tiny hover lift */
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  will-change: transform;
 }
 
-.card h3{
-  color: var(--navy);
+.card h3{ color: var(--text); }
+
+.card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px var(--shadow-strong);
+}
+
+.card:focus-within{
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px var(--shadow-strong);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .card{ transition: none; }
+  .card:hover, .card:focus-within{ transform: none; }
 }
 
 /* tables */
-table{ width: 100%; border-collapse: collapse; background: var(--paper); }
-th, td{ border: 1px solid rgba(45,47,102,0.18); padding: 10px; }
-th{ background: rgba(157,201,204,0.35); color: var(--navy); }
+table{
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+}
+th, td{
+  border: 1px solid rgba(45,47,102,0.18);
+  padding: 10px;
+}
+th{
+  background: rgba(157,201,204,0.25);
+  color: var(--text);
+}
 
 /* form */
 label{
   font-weight: 600;
-  color: var(--ink);
+  color: var(--text);
 }
 
 input, select, textarea{
@@ -156,8 +262,8 @@ input, select, textarea{
   margin-top: 6px;
   border-radius: 12px;
   border: 1px solid rgba(45,47,102,0.25);
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--card);
+  color: var(--text);
 }
 
 input:focus, select:focus, textarea:focus{
@@ -176,12 +282,12 @@ button{
 
 button[type="submit"]{
   background: var(--navy);
-  color: var(--paper);
+  color: #ffffff;
 }
 
 button[type="reset"]{
   background: var(--mauve);
-  color: var(--paper);
+  color: #ffffff;
 }
 
 button:hover{
@@ -192,5 +298,5 @@ button:hover{
 .site-footer{
   text-align: center;
   padding: 18px;
-  color: rgba(0,0,0,0.65);
+  color: var(--muted);
 }
