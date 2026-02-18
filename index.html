@@ -29,26 +29,39 @@
 
   <main>
     <h1 class="page-title">Home</h1>
+
+    <!-- ✈ Moving Plane Animation (HW Exercise 3 #3) -->
+    <div class="plane-strip" aria-hidden="true">
+      <span class="plane">✈</span>
+    </div>
+
     <div class="card">
       <p>Welcome to my portfolio website.</p>
 
+      <h3>Live Clock</h3>
+      <div class="clock-widget" aria-label="Live digital clock">
+        <div class="clock-time" id="clockTime">00:00:00</div>
+        <div class="clock-date" id="clockDate">Loading date...</div>
+        <div class="clock-greet" id="clockGreet">Hello!</div>
+      </div>
+
       <h3>Contact Form</h3>
-      <form>
-        <label>Full Name</label>
-        <input type="text" />
+      <form id="contactForm">
+        <label for="fullName">Full Name</label>
+        <input id="fullName" name="fullName" type="text" required />
 
-        <label>Email</label>
-        <input type="email" />
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
 
-        <label>Topic</label>
-        <select>
+        <label for="topic">Topic</label>
+        <select id="topic" name="topic" required>
           <option>Project Inquiry</option>
           <option>Feedback</option>
           <option>Collaboration</option>
         </select>
 
-        <label>Message</label>
-        <textarea rows="4"></textarea>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
 
         <br /><br />
         <button type="submit">Send</button>
@@ -89,6 +102,10 @@
   })();
 </script>
 
+
+</script>
+
+<script src="js/app.js"></script>
 
 </body>
 </html>
