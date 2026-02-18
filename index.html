@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="js/script.js" defer></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Earl's Portfolio | Home</title>
@@ -46,27 +47,22 @@
       </div>
 
       <h3>Contact Form</h3>
-      <form id="contactForm">
-        <label for="fullName">Full Name</label>
-        <input id="fullName" name="fullName" type="text" required />
+      <form action="https://formsubmit.co/58dd7653ea9a0f13f4b1949ba6078b28" method="POST">
+  <input type="hidden" name="_subject" value="New Message from Portfolio">
+  <input type="hidden" name="_captcha" value="false">
 
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required />
+  <label for="name">Name</label>
+  <input id="name" type="text" name="name" required>
 
-        <label for="topic">Topic</label>
-        <select id="topic" name="topic" required>
-          <option>Project Inquiry</option>
-          <option>Feedback</option>
-          <option>Collaboration</option>
-        </select>
+  <label for="email">Email</label>
+  <input id="email" type="email" name="email" required>
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
+  <label for="message">Message</label>
+  <textarea id="message" name="message" required></textarea>
 
-        <br /><br />
-        <button type="submit">Send</button>
-        <button type="reset">Reset</button>
-      </form>
+  <button type="submit">Send</button>
+</form>
+
     </div>
   </main>
 </div>

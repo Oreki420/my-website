@@ -406,3 +406,24 @@ button:hover{
   .plane{ animation: none !important; left: 16px; }
   .plane::after{ animation: none !important; }
 }
+
+form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  padding: 8px;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px;
+  background-color: steelblue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
