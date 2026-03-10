@@ -46,31 +46,5 @@ console.log("Website loaded successfully.");
   updateClock();
   setInterval(updateClock, 1000);
 
-  // Show greeting once per page load (counts for Exercise 2b)
-  try {
-    const hour = new Date().getHours();
-    alert(getGreeting(hour));
-  } catch (e) { /* ignore */ }
-
-  // ---- Form logging (Exercise 2a) ----
-  const form = document.getElementById("contactForm");
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault(); // prevents page refresh so you can screenshot console
-
-      const fullName = document.getElementById("fullName")?.value || "";
-      const email = document.getElementById("email")?.value || "";
-      const topic = document.getElementById("topic")?.value || "";
-      const message = document.getElementById("message")?.value || "";
-
-      console.log("=== Contact Form Values ===");
-      console.log("Full Name:", fullName);
-      console.log("Email:", email);
-      console.log("Topic:", topic);
-      console.log("Message:", message);
-      console.log("===========================");
-
-      alert("Form values logged in the console (Press F12 → Console).");
-    });
-  }
+  
 })();
