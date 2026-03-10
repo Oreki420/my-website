@@ -14,10 +14,10 @@ console.log("Website loaded successfully.");
 
   function getGreeting(hour) {
     if (hour >= 5 && hour < 12) return "Good Morning!";
-    if (hour >= 12 && hour < 17) return "Good Afternoon!";
-    if (hour >= 17 && hour < 21) return "Good Evening!";
-    return "Good Night!";
-  }
+    if (hour >= 12 && hour < 18) return "Good Afternoon!";
+    if (hour >= 18 && hour < 22) return "Good Evening!";
+  return "Good Night!";
+}
 
   function updateClock() {
     const now = new Date();
